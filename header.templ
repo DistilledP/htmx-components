@@ -1,0 +1,106 @@
+package component
+
+import (
+	"strings"
+)
+
+templ headerContent(content string) {
+	{ content }
+	{ children... }
+}
+
+templ Header1(content string, classes ...string) {
+	if len(classes) > 0 {
+		<h1 class={ strings.Join(classes, " ") }>
+			@headerContent(content) {
+				{ children... }
+			}
+		</h1>
+	} else {
+		<h1>
+			@headerContent(content) {
+				{ children... }
+			}
+		</h1>
+	}
+}
+
+templ Header2(content string, classes ...string) {
+	if len(classes) > 0 {
+		<h2 class={ strings.Join(classes, " ") }>
+			@headerContent(content) {
+				{ children... }
+			}
+		</h2>
+	} else {
+		<h2>
+			@headerContent(content) {
+				{ children... }
+			}
+		</h2>
+	}
+}
+
+templ Header3(content string, classes ...string) {
+	if len(classes) > 0 {
+		<h3 class={ strings.Join(classes, " ") }>
+			@headerContent(content) {
+				{ children... }
+			}
+		</h3>
+	} else {
+		<h3>
+			@headerContent(content) {
+				{ children... }
+			}
+		</h3>
+	}
+}
+
+templ Header4(content string, classes ...string) {
+	if len(classes) > 0 {
+		<h4 class={ strings.Join(classes, " ") }>
+			@headerContent(content) {
+				{ children... }
+			}
+		</h4>
+	} else {
+		<h4>
+			@headerContent(content) {
+				{ children... }
+			}
+		</h4>
+	}
+}
+
+templ Header5(content string, classes ...string) {
+	if len(classes) > 0 {
+		<h5 class={ strings.Join(classes, " ") }>
+			@headerContent(content) {
+				{ children... }
+			}
+		</h5>
+	} else {
+		<h5>
+			@headerContent(content) {
+				{ children... }
+			}
+		</h5>
+	}
+}
+
+templ Header6(content string, classes ...string) {
+	if len(classes) > 0 {
+		<h6 class={ strings.Join(classes, " ") }>
+			@headerContent(content) {
+				{ children... }
+			}
+		</h6>
+	} else {
+		<h6>
+			@headerContent(content) {
+				{ children... }
+			}
+		</h6>
+	}
+}
