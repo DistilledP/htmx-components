@@ -23,3 +23,15 @@ func (p *TestWriter) ToString() string {
 func (p *TestWriter) ContainsString(testStr string) bool {
 	return strings.Contains(p.ToString(), testStr)
 }
+
+func (p *TestWriter) ContainsAllString(testStrs []string) (bool, []string) {
+	missing := []string{}
+
+	for _, s := range testStrs {
+		if !p.ContainsString(s) {
+			missing = append(missing, s)
+		}
+	}
+
+	return len(missing) == 0, missing
+}
